@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🌞 Interactive 3D Solar System - Vinay Pal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Manrope:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3222/3222800.png" type="image/png">
+    <style>
+      :root {
+        --bg-gradient: linear-gradient(to right, #0b0c1a, #20263d, #0e1e30);
+        --panel-bg: rgba(18, 22, 34, 0.6);
+        --card-bg: rgba(25, 33, 51, 0.7);
+        --text-color: #e2e8f0;
+        --accent-color: #22d3ee;
+        --button-bg: #2563eb;
+        --button-hover: #1e40af;
+        --glass-blur: blur(10px);
+        --light-bg: #f8fafc;
+        --light-panel: #e2e8f0;
+        --light-card: #cbd5e1;
+        --light-text: #0f172a;
+        --light-accent: #0284c7;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg-gradient);
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s ease;
+         transition: background 0.6s ease, color 0.6s ease;
+      }
+
+
+      body.light {
+        background: var(--light-bg);
+        color: var(--light-text);
+      }
+      body.light .slider-wrapper label {
+     color: var(--light-text);
+}
+
+body.light .slider-wrapper input[type="range"] {
+  accent-color: var(--light-accent);
+}
+
+
+      
+body.light button {
+  background: var(--light-accent);
+  color: white;
+}
+
+body.light button:hover {
+  background: #0369a1;
+}
+
+      header {
+        text-align: center;
+        padding: 20px 16px 6px;
+        font-size: 2.3rem;
+        font-weight: 600;
+        font-family: 'Orbitron', sans-serif;
+        color: var(--accent-color);
+        text-shadow: 0 0 6px #22d3ee;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      p.description {
+        text-align: center;
+        margin: 0 0 6px;
+        font-size: 1rem;
+        color: #cbd5e1;
+      }
+
+      p.made-by {
+        text-align: center;
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+        color: #94a3b8;
+        font-family: 'Manrope', sans-serif;
+      }
+
+      #control-panel {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 8px;
+        gap: 10px;
+        background: var(--panel-bg);
+        backdrop-filter: var(--glass-blur);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.4s ease;
+      }
+
+      body.light #control-panel {
+        background: var(--light-panel);
+      }
+
+      #control-panel div {
+        background: var(--card-bg);
+        padding: 10px 14px;
+        border-radius: 14px;
+        min-width: 120px;
+        text-align: center;
+        transition: all 0.3s ease;
+        backdrop-filter: var(--glass-blur);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      body.light #control-panel div {
+        background: var(--light-card);
+        color: var(--light-text);
+      }
+
+      #control-panel div:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 12px rgba(34, 211, 238, 0.45);
+      }
+
+      #control-panel label {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      input[type="range"] {
+        width: 100px;
+        accent-color: var(--accent-color);
+      }
+      input[type="range"]:active {
+  outline: none;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+
+      .btns {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin: 8px 0 6px;
+      }
+
+      button {
+        padding: 9px 20px;
+        font-size: 1rem;
+        font-family: 'Manrope', sans-serif;
+        font-weight: 600;
+        background: var(--button-bg);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 4px 14px rgba(34, 211, 238, 0.25);
+        transition: all 0.25s ease;
+      }
+
+      button:hover {
+        background: var(--button-hover);
+        transform: scale(1.05);
+      }
+
+      #container {
+        flex: 1;
+        width: 100%;
+        height: calc(100vh - 240px);
+      }
+
+      @media (max-width: 768px) {
+        header {
+          font-size: 1.6rem;
+        }
+
+        .btns {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        #control-panel {
+          gap: 10px;
+        }
+        
+     #control-panel, #control-panel div {
+     transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s;
+     }
+      }
+    </style>
+  </head>
+  <body>
+    <header>🌞 Interactive 3D Solar System Simulation</header>
+    <p class="description">💫 Adjust speed, zoom into planets & explore the universe visually</p>
+    <p class="made-by">Made with ❤️ using Three.js by Vinay Pal</p>
+
+    <div id="control-panel"></div>
+    <div class="btns">
+      <button id="pause-btn">⏸️ Pause</button>
+      <button id="theme-toggle">🌃 Dark Mode </button>
+     <button id="reset-camera" title="Reset camera to original position">🔄 Reset Camera</button>
+
+      
+    </div>
+
+    <div id="container"></div>
+
+    <!-- Three.js CDN -->
+    <script src="https://unpkg.com/three@0.155.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- Post-Processing for Bloom -->
+    <script src="https://unpkg.com/three@0.155.0/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://unpkg.com/three@0.155.0/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://unpkg.com/three@0.155.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+
+    <!-- Custom Script -->
+     <script type="module" src="script.js"></script>
+  </body>
+</html>
