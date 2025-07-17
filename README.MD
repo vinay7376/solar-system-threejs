@@ -29,7 +29,7 @@ This is a 3D solar system simulation built using **Three.js** as part of the Fro
 
 ## 🌐 Live Demo
 
-[https://solar-system-vinay-pal.netlify.app]
+[https://solar-system-vinay-pal.netlify.app](https://solar-system-vinay-pal.netlify.app)
 
 ## 🖼️ Output Screenshots
 
