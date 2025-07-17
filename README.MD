@@ -27,6 +27,10 @@ This is a 3D solar system simulation built using **Three.js** as part of the Fro
 2. Open `index.html` directly in any modern browser (Chrome/Edge/Firefox)
 3. Enjoy exploring the solar system!
 
+## 🌐 Live Demo
+
+[https://solar-system-vinay-pal.netlify.app]
+
 ## 🖼️ Output Screenshots
 
 ### 🌌 Solar System Simulation View
