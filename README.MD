@@ -27,9 +27,21 @@ This is a 3D solar system simulation built using **Three.js** as part of the Fro
 2. Open `index.html` directly in any modern browser (Chrome/Edge/Firefox)
 3. Enjoy exploring the solar system!
 
+## 🖼️ Output Screenshots
+
+### 🌌 Solar System Simulation View
+
+![Screenshot 1](screenshots/solar-system-1.png)
+
+### 🌍 Orbiting Planets
+
+![Screenshot 2](screenshots/sun-view.png)
+
 ## 🎥 Demo Video
 
-Please refer to the attached screen recording `VinayPal-SolarSystem-Demo.mp4`.
+🔗 [Watch Demo Video on YouTube](https://youtu.be/zgx2dWhNlPs)
+
+![3D Solar System Thumbnail](https://img.youtube.com/vi/zgx2dWhNlPs/maxresdefault.jpg)
 
 ---
 
